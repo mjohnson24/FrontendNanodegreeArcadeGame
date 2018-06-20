@@ -24,7 +24,7 @@ Enemy.prototype.update = function(dt) {
 
     // check for collision betweeen the player and the enemy
     if(player.x < this.x + 38 && player.x + 38 > this.x && player.y < this.y + 20 && 35 + player.y > this.y) {
-            player.characterReset();
+            player.playerReset();
         }
 };
 
@@ -53,11 +53,11 @@ Player.prototype.update = function() {
     } else if (this.y > 400) {
         this.y = 400;
     } else if (this.y <= 0) {
-        player.characterReset();
+        player.playerReset();
     }
 }
 
-Player.prototype.characterReset = function() {
+Player.prototype.playerReset = function() {
     this.x = playerX;
     this.y = playerY;
 }
