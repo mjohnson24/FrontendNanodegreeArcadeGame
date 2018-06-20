@@ -78,7 +78,7 @@ let allEnemies = [];
 let enemyPosition = [60, 140, 220];
 let player = new Player(200, 380);
 let enemy;
-let enemeySpeed = Math.floor(Math.random() * 512);
+let enemySpeed = Math.floor(Math.random() * 512);
 
 enemyPosition.forEach(function(posY) {
     enemy = new Enemy(0, posY, 100 + enemySpeed);
