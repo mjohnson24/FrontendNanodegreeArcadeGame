@@ -5,7 +5,7 @@ let playerCharacter = 'char-boy.png';
 let charList = ['char-boy', 'char-cat-girl', 'char-horn-girl', 'car-pink-girl', 'char-princess-girl'];
 
 //SHORTCUTS FOR jQuery SELECTION
-let characterSelection = $('.characterSelection');
+let characterSelection = $('#characterSelection');
 
 //CREATE LI ELEMENTS FOR CHARACTER IMAGES
 for (let i = 0; i < charList.length; i++) {
