@@ -80,6 +80,10 @@ let player = new Player(200, 380);
 let enemy;
 let enemeySpeed = Math.floor(Math.random() * 512);
 
+enemyPosition.forEach(function(posY) {
+    enemy = new Enemy(0, posY, 100 + enemySpeed);
+    allEnemies.push(enemy);
+});
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
