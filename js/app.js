@@ -9,7 +9,7 @@ let characterSelection = $('#characterSelection');
 
 //CREATE LI ELEMENTS FOR CHARACTER IMAGES
 for (let i = 0; i < charList.length; i++) {
-    characterSelection.append($('<li id="' + charList[i] + '"><img src="images/' + charList[i] + '.png" /></li>'));
+    characterSelection.append($('<li class="' + charList[i] + '"><img src="images/' + charList[i] + '.png" /></li>'));
 }
 
 // Enemies our player must avoid
