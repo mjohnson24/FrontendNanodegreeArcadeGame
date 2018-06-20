@@ -64,9 +64,9 @@ Player.prototype.handleInput = function(key) {
     } else if (key === 'right') {
         this.x += 100;
     } else if (key === 'up') {
-        this.y -= 90;
+        this.y -= 83;
     } else if (key === 'down') {
-        this.y += 90;
+        this.y += 83;
     }
 }
 
