@@ -2,7 +2,9 @@ let enemyCharacter = 'enemy-bug.png';
 let playerCharacter = 'char-boy.png';
 
 //OBJECT LIST OF ALL PLAYER CHARACTER'S USED IN GAME
-let cards = ['char-boy', 'char-cat-girl', 'char-horn-girl', 'car-pink-girl', 'char-princess-girl'];
+let charList = ['char-boy', 'char-cat-girl', 'char-horn-girl', 'car-pink-girl', 'char-princess-girl'];
+
+
 
 // Enemies our player must avoid
 var Enemy = function(x,y,speed) {
