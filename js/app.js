@@ -6,12 +6,16 @@ let charList = ['char-boy', 'char-cat-girl', 'char-horn-girl', 'char-pink-girl',
 
 //SHORTCUTS FOR jQuery SELECTION
 let characterSelection = $('#characterSelection');
+let ul = document.getElementById('characterSelection');
 
 //CREATE LI ELEMENTS FOR CHARACTER IMAGES
 for (let i = 0; i < charList.length; i++) {
     characterSelection.append($('<li class="' + charList[i] + '"><img src="images/' + charList[i] + '.png" /></li>'));
 }
 
+ul.addEventListener('click', function(e) {
+    console.log(e.target.classList);
+});
 
 // Enemies our player must avoid
 var Enemy = function(x,y,speed) {
