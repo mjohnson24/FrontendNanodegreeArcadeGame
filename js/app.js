@@ -76,6 +76,11 @@ Player.prototype.handleInput = function(key) {
     }
 }
 
+Player.prototype.characterReset() {
+    player.x = playerX;
+    player.y = playerY;
+}
+
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
