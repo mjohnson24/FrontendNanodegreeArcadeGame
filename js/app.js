@@ -40,6 +40,19 @@ let Player = function(x, y) {
     this.sprite = 'images/char-boy.png';
 }
 
+Player.prototype.update = function() {
+    if(this.x < 0) {
+        this.x = 0;
+    } else if (this.x > 400) {
+        this.x = 400;
+    } else if (this.y > 400) {
+        this.y = 400;
+    } else if (this.y <= 0) {
+        this.x = playerX;
+        this.y = playerY;
+    }
+}
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
