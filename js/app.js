@@ -75,7 +75,7 @@ Player.prototype.handleInput = function(key) {
 // Place the player object in a variable called player
 let allEnemies = [];
 
-let enemyPosition = [60, 140, 220];
+let enemyPosition = [63, 145, 228];
 let player = new Player(200, 380);
 let enemy;
 let enemySpeed = Math.floor(Math.random() * 512);
