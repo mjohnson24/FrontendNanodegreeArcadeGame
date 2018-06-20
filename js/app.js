@@ -4,7 +4,13 @@ let playerCharacter = 'char-boy.png';
 //OBJECT LIST OF ALL PLAYER CHARACTER'S USED IN GAME
 let charList = ['char-boy', 'char-cat-girl', 'char-horn-girl', 'car-pink-girl', 'char-princess-girl'];
 
+//SHORTCUTS FOR jQuery SELECTION
+let characterSelection = $('.characterSelection');
 
+//CREATE LI ELEMENTS FOR CHARACTER IMAGES
+for (let i = 0; i < charList.length; i++) {
+    characterSelection.append($('<li id="' + charList[i] + '"><img src="' + charList[i] + '.png"></img></li>'));
+}
 
 // Enemies our player must avoid
 var Enemy = function(x,y,speed) {
