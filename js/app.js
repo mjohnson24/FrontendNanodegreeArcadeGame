@@ -18,8 +18,8 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += this.speed * dt;
-    if(this.x > 505) {
-        this.x = -200;
+    if(this.x > 500) {
+        this.x = -100;
     }
 };
 
