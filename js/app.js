@@ -75,6 +75,12 @@ Player.prototype.handleInput = function(key) {
 // Place the player object in a variable called player
 let allEnemies = [];
 
+let enemyPosition = [60, 140, 220];
+let player = new Player(200, 380);
+let enemy;
+let enemeySpeed = Math.floor(Math.random() * 512);
+
+
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
