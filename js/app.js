@@ -12,6 +12,10 @@ for (let i = 0; i < charList.length; i++) {
     characterSelection.append($('<li class="' + charList[i] + '"><img src="images/' + charList[i] + '.png" /></li>'));
 }
 
+characterSelection.click(function( event ) {
+    console.log(event.target.className);
+});
+
 // Enemies our player must avoid
 var Enemy = function(x,y,speed) {
     // Variables applied to each of our instances go here,
