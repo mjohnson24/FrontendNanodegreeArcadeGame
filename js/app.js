@@ -63,6 +63,18 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+Player.prototype.handleInput = function(key) {
+    if(key === 'left') {
+        this.x -= 100;
+    } else if (key === 'right') {
+        this.x += 100;
+    } else if (key === 'up') {
+        this.y -= 90;
+    } else if (key === 'down') {
+        this.y += 90;
+    }
+}
+
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
