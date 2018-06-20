@@ -59,6 +59,11 @@ Player.prototype.update = function() {
     }
 }
 
+Player.prototype.characterReset = function() {
+    this.x = playerX;
+    this.y = playerY;
+}
+
 // Draw the player on the screen, required method for game
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
