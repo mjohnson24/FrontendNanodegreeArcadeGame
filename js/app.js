@@ -14,7 +14,8 @@ for (let i = 0; i < charList.length; i++) {
 }
 
 ul.addEventListener('click', function(e) {
-    console.log(e.target.classList);
+    playerCharacter = e.target.parentElement.className;
+    console.log(playerCharacter);
 });
 
 // Enemies our player must avoid
