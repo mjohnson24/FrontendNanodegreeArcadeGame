@@ -54,8 +54,7 @@ Player.prototype.update = function() {
     } else if (this.y > 400) {
         this.y = 400;
     } else if (this.y <= 0) {
-        this.x = playerX;
-        this.y = playerY;
+        player.characterReset();
     }
 }
 
