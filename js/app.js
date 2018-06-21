@@ -115,8 +115,8 @@ let allEnemies = [];
 let player = new Player(200, 400);
 
 for (let i = 0; i < 3; i++) {
-    let startSpeed = 40 * Math.floor(Math.random() * 14 + 1);
-    allEnemies.push(new Enemy(-100, 65 + (85 * i), startSpeed));
+    let startSpeed = 40 * Math.floor(Math.random() * 16 + 3);
+    allEnemies.push(new Enemy(-101, 65 + (85 * i), startSpeed));
 }
 
 // This listens for key presses and sends the keys to your
