@@ -1,5 +1,6 @@
 let enemyCharacter = 'enemy-bug.png';
-let playerCharacter = 'char-boy.png';
+let playerCharacter;
+let defaultPlayer = 'char-boy';
 
 //OBJECT LIST OF ALL PLAYER CHARACTER'S USED IN GAME
 let charList = ['char-boy', 'char-cat-girl', 'char-horn-girl', 'char-pink-girl', 'char-princess-girl'];
@@ -15,8 +16,14 @@ for (let i = 0; i < charList.length; i++) {
 
 ul.addEventListener('click', function(e) {
     playerCharacter = e.target.parentElement.className;
-    console.log(playerCharacter);
+    //console.log(playerCharacter);
 });
+
+if(playerCharacter) {
+    playerCharacter;
+} else {
+    playerCharacter = defaultPlayer;
+}
 
 // Enemies our player must avoid
 var Enemy = function(x,y,speed) {
@@ -62,8 +69,10 @@ let playerY = 400;
 let Player = function(x, y) {
     this.x = x;
     this.y = y;
-    this.sprite = 'images/' + playerCharacter;
+    this.sprite = 'images/' + playerCharacter + '.png';
 }
+
+
 
 Player.prototype.update = function() {
     if(this.x < 0) {
