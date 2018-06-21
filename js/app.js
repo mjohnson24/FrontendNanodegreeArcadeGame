@@ -1,31 +1,56 @@
+/**
+    * @description sets global variables.
+    * @varaibles
+    */
 let enemyCharacter = 'enemy-bug.png';
 let playerCharacter;
 let defaultPlayer = 'char-boy';
 
-//OBJECT LIST OF ALL PLAYER CHARACTER'S USED IN GAME
+/**
+    * @description objewct array of all player characters to choose from
+    * object
+    */
 let charList = ['char-boy', 'char-cat-girl', 'char-horn-girl', 'char-pink-girl', 'char-princess-girl'];
 
-//SHORTCUTS FOR jQuery SELECTION
+/**
+    * @description shortcuts for jquery selectors
+    */
 let characterSelection = $('#characterSelection');
 let ul = document.getElementById('characterSelection');
 
-//CREATE LI ELEMENTS FOR CHARACTER IMAGES
+/**
+    * @description loop that creates LI elements for character choice list
+    */
 for (let i = 0; i < charList.length; i++) {
     characterSelection.append($('<li class="' + charList[i] + '"><img src="images/' + charList[i] + '.png" /></li>'));
 }
 
+/**
+    * @description gets the classname of the parent element
+    * @event listener
+    * @param {string} e - full html element selected
+    */
 ul.addEventListener('click', function(e) {
     playerCharacter = e.target.parentElement.className;
     //console.log(playerCharacter);
 });
 
+/**
+    * @description sets playerCharacter variable for use in which character image to use in game
+    */
 if(playerCharacter) {
     playerCharacter;
 } else {
     playerCharacter = defaultPlayer;
 }
 
-// Enemies our player must avoid
+/**
+    * @description rmeoves a solid star by adding the class for outline star.
+    * @class
+    * @param {number} x- x position of enemy character
+    * @param {number} y- y position of enemy character
+    * @param {number} speed- spped of enemy character
+    */
 var Enemy = function(x,y,speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
@@ -38,8 +63,11 @@ var Enemy = function(x,y,speed) {
     this.sprite = 'images/' + enemyCharacter;
 };
 
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
+/**
+    * @description Update the enemy's position, required method for game
+    * @class
+    * @param {string} dt- a time delta between ticks
+    */
 Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
@@ -55,7 +83,11 @@ Enemy.prototype.update = function(dt) {
     }
 };
 
-// Draw the enemy on the screen, required method for game
+
+/**
+    * @description Draw the enemy on the screen, required method for game
+    * @class
+    */
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
@@ -72,8 +104,11 @@ let Player = function(x, y) {
     this.sprite = 'images/' + playerCharacter + '.png';
 }
 
-
-
+/**
+    * @description Update the player's position and keep player with-n bounds of board, required method for game
+    * @class
+    * @param {string} dt- a time delta between ticks
+    */
 Player.prototype.update = function() {
     if(this.x < 0) {
         this.x = 0;
@@ -86,16 +121,28 @@ Player.prototype.update = function() {
     }
 }
 
+/**
+    * @description resets players position back to start
+    * @class
+    */
 Player.prototype.playerReset = function() {
     this.x = playerX;
     this.y = playerY;
 }
 
-// Draw the player on the screen, required method for game
+/**
+    * @description Draw the player on the screen, required method for game
+    * @class
+    */
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+/**
+    * @description determines the direction to move the character based on keys pressed
+    * @class
+    * @param {string} key- a tthe key that was pressed on keyboard
+    */
 Player.prototype.handleInput = function(key) {
     if(key === 'left') {
         this.x -= 100;
@@ -108,19 +155,32 @@ Player.prototype.handleInput = function(key) {
     }
 }
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
+
+/**
+    * @description create blank enemey object array to hold all enemies and instantiates a new player object in a variable
+    * @class
+    * @param {number} x- x position of player character
+    * @param {number} y- y position of player character
+    */
 let allEnemies = [];
 let player = new Player(200, 400);
 
+/**
+    * @description loops through and pushs a new enemey into the allEnemies Object with position's to place in game
+    */
 for (let i = 0; i < 3; i++) {
     let startSpeed = 40 * Math.floor(Math.random() * 16 + 3);
     allEnemies.push(new Enemy(-101, 65 + (85 * i), startSpeed));
 }
 
-// This listens for key presses and sends the keys to your
+
 // Player.handleInput() method. You don't need to modify this.
+
+/**
+    * @description This listens for key presses and sends the keys to your
+    * @event listener
+    * @param {string} e- key pressed on keyboard
+    */
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
