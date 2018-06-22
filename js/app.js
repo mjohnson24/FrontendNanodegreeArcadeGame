@@ -32,7 +32,6 @@ for (let i = 0; i < charList.length; i++) {
     */
 ul.addEventListener('click', function(e) {
     playerCharacter = e.target.parentElement.className;
-    //console.log(playerCharacter);
 });
 
 /**
