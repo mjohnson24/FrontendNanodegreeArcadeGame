@@ -19,6 +19,7 @@ let charList = ['char-boy', 'char-cat-girl', 'char-horn-girl', 'char-pink-girl',
     */
 let characterSelection = $('#characterSelection');
 let ul = document.getElementById('characterSelection');
+let scoreEl = document.getElementsByClassName('score');
 
 /**
     * @description loop that creates LI elements for character choice list
