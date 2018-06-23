@@ -143,6 +143,8 @@ Player.prototype.update = function () {
 Player.prototype.playerReset = function () {
     this.x = playerX;
     this.y = playerY;
+    score++;
+    scoreEl.innerHTML = score;
 }
 
 /**
