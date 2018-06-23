@@ -32,6 +32,7 @@ for (let i = 0; i < charList.length; i++) {
     */
 ul.addEventListener('click', function(e) {
     playerCharacter = e.target.parentElement.className;
+    $('#characterSelection li').removeClass('blueBorder');
     e.target.parentElement.classList.add('blueBorder');
     player.sprite = 'images/' + playerCharacter + '.png';
 });
