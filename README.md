@@ -9,4 +9,6 @@ This game is my 3rd project for the Udaicty Front-End-Web-Development Nanodgree 
 
 Use the arrow keys to move the player across the board. To win you need to reach water, but avoid colliding with the bugs.
 
-##Enjoy it!  :smile:
+#Enjoy the game!  :smile:
+
+Click [here](https://mjohnson24.github.io/FrontendNanodegreeArcadeGame/) to play
