@@ -6,6 +6,7 @@ let enemyCharacter = 'enemy-bug.png';
 let playerCharacter;
 let defaultClass;
 let defaultPlayer = 'char-boy';
+let score = 0;
 
 /**
     * @description objewct array of all player characters to choose from
