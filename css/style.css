@@ -6,3 +6,7 @@ li {
     display: inline-block;
     list-style: none;
 }
+
+.blueBorder {
+    border-bottom: 4px blue solid;
+}
