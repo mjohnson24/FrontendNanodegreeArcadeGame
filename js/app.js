@@ -37,9 +37,13 @@ for (let i = 0; i < charList.length; i++) {
     * @param {string} e - full html element selected
     */
 ul.addEventListener('click', function(e) {
+    //get target class name for setting player character to use in game later
     playerCharacter = e.target.parentElement.className;
+    //removing any or a previous blueBorder class before adding or changing it based on character selected
     $('#characterSelection li').removeClass('blueBorder');
+    //adding a class of blueBorder to show which character is selected
     e.target.parentElement.classList.add('blueBorder');
+    //settign the sprite of the player class to the selected image above and adding .png at the end to pull in the image
     player.sprite = 'images/' + playerCharacter + '.png';
 });
 
@@ -47,8 +51,10 @@ ul.addEventListener('click', function(e) {
     * @description sets playerCharacter variable for use in which character image to use in game
     */
 if(playerCharacter) {
+    //if new character is selected sets it to the player character name minus the .png
     playerCharacter;
 } else {
+    //default image upon loading the game
     playerCharacter = defaultPlayer;
 }
 
