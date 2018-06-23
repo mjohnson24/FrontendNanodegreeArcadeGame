@@ -97,7 +97,6 @@ Enemy.prototype.update = function (dt) {
     }
 };
 
-
 /**
     * @description Draw the enemy on the screen, required method for game
     * @class
@@ -169,7 +168,6 @@ Player.prototype.handleInput = function (key) {
     }
 }
 
-
 /**
     * @description create blank enemey object array to hold all enemies and instantiates a new player object in a variable
     * @class
@@ -187,11 +185,8 @@ for (let i = 0; i < 3; i++) {
     allEnemies.push(new Enemy(-101, 65 + (85 * i), startSpeed));
 }
 
-
-// Player.handleInput() method. You don't need to modify this.
-
 /**
-    * @description This listens for key presses and sends the keys to your
+    * @description This listens for key presses and sends the keys to your. Player.handleInput() method. You don't need to modify this.
     * @event listener
     * @param {string} e- key pressed on keyboard
     */
