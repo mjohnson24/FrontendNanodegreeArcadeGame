@@ -36,7 +36,7 @@ for (let i = 0; i < charList.length; i++) {
     * @event listener
     * @param {string} e - full html element selected
     */
-ul.addEventListener('click', function(e) {
+ul.addEventListener('click', function (e) {
     //get target class name for setting player character to use in game later
     playerCharacter = e.target.parentElement.className;
     //removing any or a previous blueBorder class before adding or changing it based on character selected
@@ -50,7 +50,7 @@ ul.addEventListener('click', function(e) {
 /**
     * @description sets playerCharacter variable for use in which character image to use in game
     */
-if(playerCharacter) {
+if (playerCharacter) {
     //if new character is selected sets it to the player character name minus the .png
     playerCharacter;
 } else {
@@ -65,7 +65,7 @@ if(playerCharacter) {
     * @param {number} y- y position of enemy character
     * @param {number} speed- spped of enemy character
     */
-var Enemy = function(x,y,speed) {
+var Enemy = function (x, y, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
     this.x = x;
@@ -82,17 +82,17 @@ var Enemy = function(x,y,speed) {
     * @class
     * @param {string} dt- a time delta between ticks
     */
-Enemy.prototype.update = function(dt) {
+Enemy.prototype.update = function (dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += this.speed * dt;
-    if(this.x > 505) {
+    if (this.x > 505) {
         this.x = -100;
     }
 
     // check for collision betweeen the player and the enemy
-    if(player.x < this.x + 38 && player.x + 38 > this.x && player.y < this.y + 20 && 35 + player.y > this.y) {
+    if (player.x < this.x + 38 && player.x + 38 > this.x && player.y < this.y + 20 && 35 + player.y > this.y) {
         player.playerReset();
     }
 };
@@ -102,7 +102,7 @@ Enemy.prototype.update = function(dt) {
     * @description Draw the enemy on the screen, required method for game
     * @class
     */
-Enemy.prototype.render = function() {
+Enemy.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
@@ -112,7 +112,7 @@ Enemy.prototype.render = function() {
 let playerX = 200;
 let playerY = 400;
 
-let Player = function(x, y) {
+let Player = function (x, y) {
     this.x = x;
     this.y = y;
     this.sprite = 'images/' + playerCharacter + '.png';
@@ -123,8 +123,8 @@ let Player = function(x, y) {
     * @class
     * @param {string} dt- a time delta between ticks
     */
-Player.prototype.update = function() {
-    if(this.x < 0) {
+Player.prototype.update = function () {
+    if (this.x < 0) {
         this.x = 0;
     } else if (this.x > 400) {
         this.x = 400;
@@ -139,7 +139,7 @@ Player.prototype.update = function() {
     * @description resets players position back to start
     * @class
     */
-Player.prototype.playerReset = function() {
+Player.prototype.playerReset = function () {
     this.x = playerX;
     this.y = playerY;
 }
@@ -148,7 +148,7 @@ Player.prototype.playerReset = function() {
     * @description Draw the player on the screen, required method for game
     * @class
     */
-Player.prototype.render = function() {
+Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
@@ -157,8 +157,8 @@ Player.prototype.render = function() {
     * @class
     * @param {string} key- a tthe key that was pressed on keyboard
     */
-Player.prototype.handleInput = function(key) {
-    if(key === 'left') {
+Player.prototype.handleInput = function (key) {
+    if (key === 'left') {
         this.x -= 100;
     } else if (key === 'right') {
         this.x += 100;
@@ -195,7 +195,7 @@ for (let i = 0; i < 3; i++) {
     * @event listener
     * @param {string} e- key pressed on keyboard
     */
-document.addEventListener('keyup', function(e) {
+document.addEventListener('keyup', function (e) {
     var allowedKeys = {
         37: 'left',
         38: 'up',
