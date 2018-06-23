@@ -153,7 +153,7 @@ Player.prototype.playerReset = function () {
     */
    Player.prototype.gameReset = function () {
     score = 0;
-    player.playerReset();
+    scoreEl.innerHTML = score;
 }
 
 /**
