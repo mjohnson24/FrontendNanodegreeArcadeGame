@@ -152,6 +152,8 @@ Player.prototype.playerReset = function () {
     * @class
     */
    Player.prototype.gameReset = function () {
+    this.x = playerX;
+    this.y = playerY;
     score = 0;
     scoreEl.innerHTML = score;
 }
