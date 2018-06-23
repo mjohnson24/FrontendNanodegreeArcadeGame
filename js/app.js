@@ -148,6 +148,15 @@ Player.prototype.playerReset = function () {
 }
 
 /**
+    * @description resets players position back to start and resets score to 0
+    * @class
+    */
+   Player.prototype.gameReset = function () {
+    score = 0;
+    player.playerReset();
+}
+
+/**
     * @description Draw the player on the screen, required method for game
     * @class
     */
