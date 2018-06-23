@@ -26,7 +26,7 @@ for (let i = 0; i < charList.length; i++) {
 }
 
 /**
-    * @description gets the classname of the parent element
+    * @description gets the classname of the parent element and adds class blueBorder to selected character
     * @event listener
     * @param {string} e - full html element selected
     */
