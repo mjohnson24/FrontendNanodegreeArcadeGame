@@ -4,6 +4,7 @@
     */
 let enemyCharacter = 'enemy-bug.png';
 let playerCharacter;
+let defaultClass;
 let defaultPlayer = 'char-boy';
 
 /**
@@ -22,7 +23,12 @@ let ul = document.getElementById('characterSelection');
     * @description loop that creates LI elements for character choice list
     */
 for (let i = 0; i < charList.length; i++) {
-    characterSelection.append($('<li class="' + charList[i] + '"><img src="images/' + charList[i] + '.png" /></li>'));
+    if (charList[i] === 'char-boy') {
+        defaultClass = charList[i] + ' blueBorder';
+    } else {
+        defaultClass = charList[i];
+    }
+    characterSelection.append($('<li class="' + defaultClass + '"><img src="images/' + charList[i] + '.png" /></li>'));
 }
 
 /**
