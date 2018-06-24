@@ -9,7 +9,7 @@ let defaultPlayer = 'char-boy';
 let score = 0;
 
 /**
-    * @description objewct array of all player characters to choose from
+    * @description object array of all player characters to choose from
     * object
     */
 let charList = ['char-boy', 'char-cat-girl', 'char-horn-girl', 'char-pink-girl', 'char-princess-girl'];
