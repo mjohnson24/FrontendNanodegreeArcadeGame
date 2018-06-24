@@ -1,5 +1,5 @@
 # Frontend-Nanodegree-Arcade-Game
-===============================
+===================================
 
 ## Description:
 
