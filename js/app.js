@@ -47,6 +47,7 @@ ul.addEventListener('click', function (e) {
     e.target.parentElement.classList.add('blueBorder');
     //settign the sprite of the player class to the selected image above and adding .png at the end to pull in the image
     player.sprite = 'images/' + playerCharacter + '.png';
+    //reset game back to beginning when selecting a new character
     player.gameReset();
 });
 
