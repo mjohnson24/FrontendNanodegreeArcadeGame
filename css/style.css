@@ -10,3 +10,7 @@ li {
 .blueBorder {
     border-bottom: 4px blue solid;
 }
+
+#score {
+    font-size: 1.75em;
+}
